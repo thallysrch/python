@@ -1,0 +1,20 @@
+def Pascoa():
+    ano = int(input("Informe o ano que você quer descobrir a data da páscoa:"))
+    a = int(ano % 19)
+    b = int(ano / 100)
+    c = int(ano % 100)
+    d = int(b / 4)
+    e = int(b % 4)
+    f = int((b + 8) / 25)
+    g = int((b - f + 1) / 3)
+    h = ((19 * a + b - d - g + 15) % 30)
+    i = int(c / 4)
+    k = int(c % 4)
+    l = ((32 + 2 * e + 2 * i - h - k) % 7)
+    m = int((a + 11 * h + 22 * l) / 451)
+    dia = (((h + l - 7 * m + 114) % 31) + 1)
+    mes = int((h + l - 7 * m + 114) / 31)
+    print(f"A Páscoa será no dia {dia} do mês {mes} em {ano}.")
+
+if (__name__ == "_main_"):
+        Pascoa()
